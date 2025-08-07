@@ -1,0 +1,100 @@
+/* css/style.css */
+
+/* 1) Page background & default text */
+body {
+  background-color: #f8f9fa;
+  color: #343a40;
+  font-family: system-ui, sans-serif;
+}
+
+/* 2) Navbar styling */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+}
+.navbar-brand {
+  font-weight: 600;
+  color: #0d6efd !important;
+}
+.nav-link {
+  color: #495057 !important;
+  margin-right: 0.5rem;
+}
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+
+/* 3) Page header */
+.container > h1,
+.container > .d-flex > h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 4) Card layout */
+.row {
+  margin-top: 1rem;
+}
+.card {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform .2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: .75rem;
+}
+.card-text {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+.card-footer {
+  background: none;
+  border-top: none;
+  padding: .75rem 1rem;
+  display: flex;
+  gap: .5rem;
+}
+
+/* 5) Forms & buttons */
+.form-control {
+  border-radius: .375rem;
+}
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+.btn-success {
+  background-color: #198754;
+  border-color: #198754;
+}
+.form-text {
+  font-size: .875rem;
+  color: #6c757d;
+}
+
+/* 6) Footer styling */
+footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  border-top: 1px solid #dee2e6;
+  color: #6c757d;
+  font-size: .875rem;
+  text-align: center;
+}
