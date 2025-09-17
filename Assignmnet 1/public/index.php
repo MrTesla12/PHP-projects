@@ -2,7 +2,7 @@
 // public/index.php
 // --- Load the helper function from application_code/cat_api.php ---
 $paths = [
-  __DIR__ . '/../application_code/cat_api.php', // Option A: application_code is a sibling of public_html
+  __DIR__ . '/../application_code/cat_api.php', 
 ];
 
 $loaded = false;
@@ -83,3 +83,4 @@ $result = ada_fetch_cat_images($count);
   </footer>
 </body>
 </html>
+
