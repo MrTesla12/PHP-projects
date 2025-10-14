@@ -1,0 +1,50 @@
+/* Layout */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  color: #111;
+}
+.site-header, .site-footer {
+  background: #111;
+  color: #eee;
+  padding: 1rem;
+}
+.nav a { color: #fff; margin-right: .75rem; text-decoration: none; }
+.nav a:hover { text-decoration: underline; }
+
+.container { flex: 1 0 auto; padding: 1rem; max-width: 960px; margin: 0 auto; }
+.site-footer { margin-top: auto; }
+
+/* Forms */
+form { display: grid; gap: .75rem; max-width: 520px; }
+label { font-weight: 600; }
+input[type="text"], input[type="email"], textarea, input[type="file"], button, select {
+  font: inherit; padding: .5rem; border: 1px solid #d0d0d0; border-radius: 6px;
+}
+button { background: #111; color: #fff; border-color: #111; cursor: pointer; }
+button:hover { filter: brightness(1.05); }
+.help { color: #666; font-size: .9rem; }
+
+/* Cards grid */
+.grid { list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+}
+.card { border: 1px solid #e6e6e6; border-radius: 10px; background: #fafafa; padding: .75rem; }
+.card img { width: 100%; height: auto; border-radius: 8px; display: block; aspect-ratio: 4/3; object-fit: cover; }
+.card h3 { margin: .5rem 0 .25rem; font-size: 1.05rem; }
+.muted { color: #666; font-size: .9rem; }
+.error { color: #b00020; font-weight: 600; }
+.success { color: #0a7d35; font-weight: 600; }
+
+
+/* hover effect*/
+:root { --accent:#7b5cff; }
+a { color: var(--accent); }
+.card { transition: box-shadow .15s ease; }
+.card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+
