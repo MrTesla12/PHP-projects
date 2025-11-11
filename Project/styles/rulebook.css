@@ -1,0 +1,52 @@
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Spectral+SC:wght@500;700&display=swap');
+
+/* Basic reset */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* Typography */
+body {
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.5;
+  padding: 1rem;
+  background: #f4efe7;
+  color: #222;
+}
+h1, h2 {
+  font-family: "Spectral SC", Georgia, serif;
+  margin-top: 0;
+}
+
+/* To keep content centered */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* Header & nav */
+.site-header {
+  padding: 1rem 0;
+  border-bottom: 2px solid #666;
+  background: #fff;
+}
+.nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #222;
+}
+
+/* Footer */
+.site-footer {
+  padding: 1rem 0;
+  border-top: 2px solid #666;
+  margin-top: 2rem;
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: .75rem;
+  }
+}
