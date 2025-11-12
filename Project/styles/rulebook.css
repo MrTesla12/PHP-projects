@@ -1,36 +1,51 @@
-
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Spectral+SC:wght@500;700&display=swap');
 
-/* Basic reset */
+/* Reset */
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
 
-/* Typography */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Layout */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   font-family: Inter, system-ui, sans-serif;
   line-height: 1.5;
   padding: 1rem;
   background: #f4efe7;
   color: #222;
 }
+
+main.container {
+  flex: 1;
+}
+
+/* Typography */
 h1, h2 {
   font-family: "Spectral SC", Georgia, serif;
   margin-top: 0;
 }
 
-/* To keep content centered */
+/* Container */
 .container {
   max-width: 1080px;
   margin: 0 auto;
 }
 
-/* Header & nav */
+/* Header */
 .site-header {
   padding: 1rem 0;
   border-bottom: 2px solid #666;
   background: #fff;
 }
+
 .nav a {
   margin-right: 1rem;
   text-decoration: none;
@@ -41,12 +56,39 @@ h1, h2 {
 .site-footer {
   padding: 1rem 0;
   border-top: 2px solid #666;
-  margin-top: 2rem;
+  margin-top: auto;
+  background: #fff;
+  color: #222;
 }
 
-/* Basic responsiveness */
-@media (max-width: 768px) {
-  body {
-    padding: .75rem;
-  }
+/* Shop layout */
+.grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
+
+.item-card {
+  background: #fff;
+  border: 1px solid #bbb;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+/* Events layout */
+.events {
+  display: grid;
+  gap: 1rem;
+}
+
+.event {
+  border: 1px solid #bbb;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.mt {
+  margin-top: 1rem;
+}
+
