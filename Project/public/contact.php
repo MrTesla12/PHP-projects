@@ -1,12 +1,32 @@
-<?php $title="Home"; require __DIR__ . '/../ui/header.php'; ?>
+<?php $title="Contact"; require __DIR__ . '/../ui/header.php'; ?>
+
 <h1>Contact</h1>
-<form action="#" method="post">
-  <label for="name">Name</label>
-  <input id="name" name="name" type="text">
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email">
-  <label for="msg">Message</label>
-  <textarea id="msg" name="message" rows="5"></textarea>
-  <button type="submit" disabled>Send(Does nothing)</button>
-</form>
+
+<section class="contact-wrap">
+  <div class="contact-card">
+    <p class="contact-lede">Questions about stock or events? Send a note.</p>
+
+    <form method="post" action="#">
+      <div class="field">
+        <label for="c-name">Name</label>
+        <input id="c-name" type="text" placeholder="Your name">
+      </div>
+
+      <div class="field">
+        <label for="c-email">Email</label>
+        <input id="c-email" type="email" placeholder="you@example.com">
+      </div>
+
+      <div class="field field-full">
+        <label for="c-message">Message</label>
+        <textarea id="c-message" placeholder="What do you need?"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" disabled>Send (does nothing)</button>
+      </div>
+    </form>
+  </div>
+</section>
+
 <?php require __DIR__ . '/../ui/footer.php'; ?>

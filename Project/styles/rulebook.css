@@ -91,4 +91,25 @@ h1, h2 {
 .mt {
   margin-top: 1rem;
 }
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
 
+/* contanct page */
+textarea {
+  display: block;
+  width: 300px;      
+  height: 120px;
+  margin-top: .25rem;
+}
+
+form label {
+  display: inline-block;
+  margin-right: .5rem;
+}
+
+form input {
+  margin-bottom: .75rem;
+}
