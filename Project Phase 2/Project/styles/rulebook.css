@@ -215,3 +215,43 @@ form input {
   margin-top: 0.75rem;
   font-size: 0.85rem;
 }
+.product-detail {
+  margin-top: 1.5rem;
+}
+
+.product-detail-body {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.product-detail-image img {
+  max-width: 260px;
+  display: block;
+  border-radius: 4px;
+}
+
+.product-detail-info {
+  max-width: 600px;
+}
+
+.product-detail-price {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.product-detail-stock {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.product-detail-desc {
+  margin-bottom: 1rem;
+}
+
+.product-detail-back a {
+  text-decoration: none;
+  font-weight: 600;
+}
