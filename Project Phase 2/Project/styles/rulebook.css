@@ -1,7 +1,5 @@
-/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Spectral+SC:wght@500;700&display=swap');
 
-/* Reset */
 * { box-sizing: border-box; }
 
 html, body {
@@ -33,13 +31,11 @@ h1, h2 {
   margin-top: 0;
 }
 
-/* Container */
 .container {
   max-width: 1080px;
   margin: 0 auto;
 }
 
-/* Header */
 .site-header {
   padding: 1rem 0;
   border-bottom: 2px solid #666;
@@ -52,7 +48,6 @@ h1, h2 {
   color: #222;
 }
 
-/* Footer */
 .site-footer {
   padding: 1rem 0;
   border-top: 2px solid #666;
@@ -94,14 +89,64 @@ h1, h2 {
 
 .grid-two {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 2fr 1.3fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
 }
 
-/* contanct page */
+.grid-two section form {
+  max-width: 420px;
+}
+
+.grid-two section form label {
+  display: block;
+  margin-top: 0.65rem;
+  margin-bottom: 0.15rem;
+  font-weight: 600;
+}
+
+.grid-two section form input[type="text"],
+.grid-two section form input[type="email"],
+.grid-two section form input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.grid-two section form button {
+  margin-top: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #444;
+  color: #f5f5f5;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.grid-two section form button:hover {
+  background: #222;
+}
+
+.grid-two section:last-child {
+  max-width: 360px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.form-message {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
 textarea {
   display: block;
-  width: 300px;      
+  width: 300px;
   height: 120px;
   margin-top: .25rem;
 }
@@ -144,4 +189,3 @@ form input {
   padding: 0.3rem 0.6rem;
   font-size: 0.85rem;
 }
-
