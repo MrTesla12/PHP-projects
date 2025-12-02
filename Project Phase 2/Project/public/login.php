@@ -26,5 +26,5 @@ if (!$admin || !password_verify($password, $admin['password'])) {
 $_SESSION['admin_id']   = (int)$admin['id'];
 $_SESSION['admin_name'] = $admin['name'];
 
-header('Location: products.php'); 
+header('Location: shop.php'); 
 exit;

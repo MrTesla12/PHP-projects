@@ -15,8 +15,10 @@ require __DIR__ . '/../ui/header.php';
 ?>
 
 <h1>Shop</h1>
+<?php if (is_admin_logged_in()): ?>
+  <p><a href="admin_product_new.php">Add new product</a></p>
+<?php endif; ?>
 
-<!-- All Products Page – populated from database -->
 <div class="grid-three">
   <?php if (empty($products)): ?>
     <p>No products available yet.</p>
