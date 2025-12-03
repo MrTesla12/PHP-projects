@@ -61,47 +61,66 @@ class Inventory
     // Create product
     // $price is in dollars; stored in DB as cents
     public function createProduct(
-        string $name,
-        string $description,
-        $price,
-        $quantity,
-        string $imageName
-    ): array {
-        $name        = trim($name);
-        $description = trim($description);
+    string $name,
+    string $description,
+    float $price,
+    int $quantity,
+    string $imageName
+): array {
+    $name        = trim($name);
+    $description = trim($description);
+    $imageName   = trim($imageName);
 
-        if ($name === '') {
-            return ['ok' => false, 'error' => 'Product name is required.'];
-        }
-
-        if ($description === '') {
-            return ['ok' => false, 'error' => 'Description is required.'];
-        }
-
-        if (!is_numeric($price) || $price < 0) {
-            return ['ok' => false, 'error' => 'Price must be a non-negative number.'];
-        }
-
-        if (!is_numeric($quantity) || $quantity < 0 || floor($quantity) != $quantity) {
-            return ['ok' => false, 'error' => 'Quantity must be a non-negative integer.'];
-        }
-
-        $priceCents = (int) round($price * 100);
-
-        $stmt = $this->pdo->prepare(
-            'INSERT INTO products (name, short_desc, price_cents, quantity, image, is_active)
-             VALUES (?, ?, ?, ?, ?, 1)'
-        );
-        $stmt->execute([
-            $name,
-            $description,
-            $priceCents,
-            (int)$quantity,
-            $imageName,
-        ]);
-
-        return ['ok' => true];
+    // --- validation ---
+    if ($name === '') {
+        return ['ok' => false, 'error' => 'Name is required.'];
     }
+
+    if ($description === '') {
+        return ['ok' => false, 'error' => 'Description is required.'];
+    }
+
+    if ($price <= 0) {
+        return ['ok' => false, 'error' => 'Price must be greater than zero.'];
+    }
+
+    if ($quantity < 0) {
+        return ['ok' => false, 'error' => 'Quantity cannot be negative.'];
+    }
+
+    if ($imageName === '') {
+        return ['ok' => false, 'error' => 'Image file name is required.'];
+    }
+
+    // convert dollars to cents
+    $priceCents = (int) round($price * 100);
+
+    // IMPORTANT: foreign key – use an existing category id
+    // assuming id=1 exists in your categories table
+    $categoryId = 1;
+
+    $sql = "INSERT INTO products
+              (category_id, name, short_desc, price_cents, quantity, image, is_active, created_at)
+            VALUES
+              (:category_id, :name, :short_desc, :price_cents, :quantity, :image, 1, NOW())";
+
+    $stmt = $this->pdo->prepare($sql);
+
+    try {
+        $stmt->execute([
+            ':category_id' => $categoryId,
+            ':name'        => $name,
+            ':short_desc'  => $description,
+            ':price_cents' => $priceCents,
+            ':quantity'    => $quantity,
+            ':image'       => $imageName,
+        ]);
+    } catch (PDOException $e) {
+        return ['ok' => false, 'error' => 'DB error: ' . $e->getMessage()];
+    }
+
+    return ['ok' => true];
+}
 
     // Read: all products (public view)
     public function getAllProducts(): array
